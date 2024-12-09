@@ -1,5 +1,7 @@
 package com.projects.main;
 
 public class Game {
-
+	public Game(){
+		
+	}
 }
