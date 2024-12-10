@@ -6,8 +6,15 @@ import java.util.Set;
 public class GuessValidator {
 	private Set<Character> correctGuesses;
 	private Set<Character> incorrectGuesses;
+	
 	public GuessValidator() {
 		this.correctGuesses = new HashSet<>();
 		this.incorrectGuesses = new HashSet<>();
+	}
+	
+	public boolean isValid(char guess, String word) {
+		if() {
+			
+		}
 	}
 }

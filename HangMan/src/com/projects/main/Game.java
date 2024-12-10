@@ -20,6 +20,8 @@ public class Game {
 		System.out.println("Game is starting");
 		askGameDifficulty();
 		words.wordRandomizer();
+		
+		//
 	}
 
 
