@@ -23,49 +23,45 @@ public class Game {
 	}
 
 	private void askGameDifficulty() {
-		int input = 0;
-		boolean validInput = false;
-
 		System.out.println("Choose a difficulty level: ");
 		System.out.println("(1) Easy");
 		System.out.println("(2) Medium");
 		System.out.println("(3) Hard");
 
-		validInput = validateInput(input);
+		int input = validateInput();
 
-		if (validInput == true) {
-			switch (input) {
-			case 1:
-				words.loadEasyWords();
-				break;
-			case 2:
-				words.loadMediumWords();
-				break;
-			case 3:
-				words.loadHardWords();
-				break;
-			}
+		switch (input) {
+		case 1:
+			words.loadEasyWords();
+			break;
+		case 2:
+			words.loadMediumWords();
+			break;
+		case 3:
+			words.loadHardWords();
+			break;
 		}
+
 	}
 
-	private boolean validateInput(int input) {
+	private int validateInput() {
 		int choice = 0;
 		boolean validChoice = false;
-		
-		while(!validChoice) {
-			try {
-                choice = Integer.parseInt(scanner.nextLine().trim());
 
-                if (choice >= 1 && choice <= 4) {
-                    validChoice = true;
-                } else {
-                    System.out.println("Invalid choice. Please enter a number between 1 and 3.");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number between 1 and 3.");
-            }
+		while (!validChoice) {
+			try {
+				choice = Integer.parseInt(scanner.nextLine().trim());
+
+				if (choice >= 1 && choice <= 3) {
+					validChoice = true;
+				} else {
+					System.out.println("Invalid choice. Please enter a number between 1 and 3.");
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("Invalid input. Please enter a number between 1 and 3.");
+			}
 		}
-		return validChoice;
+		return choice;
 	}
 
 }
