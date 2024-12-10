@@ -19,8 +19,9 @@ public class Game {
 	public void play() {
 		System.out.println("Game is starting");
 		askGameDifficulty();
-
+		words.wordRandomizer();
 	}
+
 
 	private void askGameDifficulty() {
 		System.out.println("Choose a difficulty level: ");
